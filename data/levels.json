@@ -1,0 +1,186 @@
+[
+  {
+    "level_id": 1,
+    "name": "CYAN ABYSS",
+    "maze_width": 15,
+    "maze_height": 11,
+    "cell_size": 115.0,
+    "seed": 2048,
+    "required_nodes": 5,
+    "colors": {
+      "primary": "#00F0FF",
+      "secondary": "#7B2BFF",
+      "accent": "#C6FF00",
+      "danger": "#FF2D95"
+    },
+    "hazards": [
+      {
+        "type": "laser",
+        "grid_x": 7,
+        "grid_y": 5,
+        "length": 220.0,
+        "rotation_speed": 2.2,
+        "beam_count": 2,
+        "reverse_interval": 3.5
+      },
+      {
+        "type": "seeker",
+        "grid_x": 10,
+        "grid_y": 3,
+        "patrol_radius": 280.0,
+        "chase_speed": 220.0
+      },
+      {
+        "type": "pillar",
+        "grid_x": 4,
+        "grid_y": 3,
+        "radius": 50.0,
+        "on_time": 0.9,
+        "off_time": 0.8
+      },
+      {
+        "type": "slider",
+        "grid_x_start": 9,
+        "grid_y_start": 6,
+        "grid_x_end": 9,
+        "grid_y_end": 9,
+        "speed": 230.0
+      }
+    ]
+  },
+  {
+    "level_id": 2,
+    "name": "MAGENTA PURGATORY",
+    "maze_width": 19,
+    "maze_height": 13,
+    "cell_size": 105.0,
+    "seed": 7712,
+    "required_nodes": 7,
+    "colors": {
+      "primary": "#FF2D95",
+      "secondary": "#00F0FF",
+      "accent": "#C6FF00",
+      "danger": "#7B2BFF"
+    },
+    "hazards": [
+      {
+        "type": "laser",
+        "grid_x": 6,
+        "grid_y": 6,
+        "length": 210.0,
+        "rotation_speed": 2.5,
+        "beam_count": 4,
+        "reverse_interval": 2.5
+      },
+      {
+        "type": "laser",
+        "grid_x": 14,
+        "grid_y": 8,
+        "length": 210.0,
+        "rotation_speed": -2.8,
+        "beam_count": 2
+      },
+      {
+        "type": "seeker",
+        "grid_x": 5,
+        "grid_y": 8,
+        "patrol_radius": 300.0,
+        "chase_speed": 240.0
+      },
+      {
+        "type": "seeker",
+        "grid_x": 13,
+        "grid_y": 4,
+        "patrol_radius": 300.0,
+        "chase_speed": 240.0
+      },
+      {
+        "type": "pillar",
+        "grid_x": 9,
+        "grid_y": 6,
+        "radius": 52.0,
+        "on_time": 0.7,
+        "off_time": 0.7
+      },
+      {
+        "type": "slider",
+        "grid_x_start": 12,
+        "grid_y_start": 2,
+        "grid_x_end": 16,
+        "grid_y_end": 2,
+        "speed": 240.0
+      }
+    ]
+  },
+  {
+    "level_id": 3,
+    "name": "NEON NIGHTMARE",
+    "maze_width": 23,
+    "maze_height": 15,
+    "cell_size": 95.0,
+    "seed": 9999,
+    "required_nodes": 9,
+    "colors": {
+      "primary": "#C6FF00",
+      "secondary": "#FF2D95",
+      "accent": "#00F0FF",
+      "danger": "#FF0033"
+    },
+    "hazards": [
+      {
+        "type": "laser",
+        "grid_x": 11,
+        "grid_y": 7,
+        "length": 240.0,
+        "rotation_speed": 3.2,
+        "beam_count": 4,
+        "reverse_interval": 2.0
+      },
+      {
+        "type": "seeker",
+        "grid_x": 8,
+        "grid_y": 4,
+        "patrol_radius": 320.0,
+        "chase_speed": 260.0
+      },
+      {
+        "type": "seeker",
+        "grid_x": 16,
+        "grid_y": 10,
+        "patrol_radius": 320.0,
+        "chase_speed": 260.0
+      },
+      {
+        "type": "seeker",
+        "grid_x": 4,
+        "grid_y": 11,
+        "patrol_radius": 300.0,
+        "chase_speed": 250.0
+      },
+      {
+        "type": "slider",
+        "grid_x_start": 6,
+        "grid_y_start": 12,
+        "grid_x_end": 14,
+        "grid_y_end": 12,
+        "speed": 260.0
+      },
+      {
+        "type": "slider",
+        "grid_x_start": 18,
+        "grid_y_start": 3,
+        "grid_x_end": 18,
+        "grid_y_end": 8,
+        "speed": 260.0
+      },
+      {
+        "type": "pillar",
+        "grid_x": 11,
+        "grid_y": 11,
+        "radius": 55.0,
+        "on_time": 0.6,
+        "off_time": 0.6
+      }
+    ]
+  }
+]

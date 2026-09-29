@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/collectibles/energy_node.gd" id="1_node"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 18.0
+
+[node name="EnergyNode" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_node")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0.941176, 1, 1)
+
+[node name="PulseRing" type="Line2D" parent="."]
+width = 2.5
+default_color = Color(0, 0.941176, 1, 1)
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 24
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.9
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 140.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0, 0.941176, 1, 1)

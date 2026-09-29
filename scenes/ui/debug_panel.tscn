@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/debug_panel.gd" id="1_debug"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.04, 0.05, 0.08, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.941176, 1, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_info"]
+font_size = 14
+font_color = Color(0, 0.941176, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_help"]
+font_size = 12
+font_color = Color(0.75, 0.8, 0.9, 0.8)
+
+[node name="DebugPanel" type="CanvasLayer"]
+layer = 120
+script = ExtResource("1_debug")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 400.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InfoLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "=== NEON LABYRINTH DEBUG PANEL ==="
+label_settings = SubResource("LabelSettings_info")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HelpLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "[F1 / ~] Đóng/Mở Bảng Test
+[F2] Bật/Tắt GOD MODE (Bất tử)
+[F3] Soi sáng toàn map (Tắt bóng tối)
+[F4] Tự động nhặt ngay 1 Core
+[F5] Tự sát (Kiểm tra Full Reset)
+[F6] Chuyển ngay sang Sector tiếp theo
+[F7] Tua chậm thời gian (0.25x Slow-mo)
+[F8] Phóng sóng Sonar Radar"
+label_settings = SubResource("LabelSettings_help")

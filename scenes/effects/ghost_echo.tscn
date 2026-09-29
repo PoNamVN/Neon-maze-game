@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/effects/ghost_echo.gd" id="1_ghost"]
+
+[node name="GhostEcho" type="Node2D"]
+script = ExtResource("1_ghost")
+
+[node name="InnerFill" type="Polygon2D" parent="."]
+color = Color(0, 0.941176, 1, 0.06)
+
+[node name="OutlineCyan" type="Line2D" parent="."]
+width = 1.8
+default_color = Color(0, 0.941176, 1, 1)
+
+[node name="OutlineMagenta" type="Line2D" parent="."]
+width = 1.8
+default_color = Color(1, 0.176471, 0.584314, 1)
+
+[node name="OutlineCore" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(1, 1, 1, 1)

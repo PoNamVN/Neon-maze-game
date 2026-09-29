@@ -1,0 +1,233 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/tutorial_modal.gd" id="1_modal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.02, 0.035, 0.06, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.94, 1, 0.95)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0.94, 1, 0.22)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab"]
+bg_color = Color(0.06, 0.09, 0.16, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.15, 0.35, 0.5, 0.8)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_canvas_box"]
+bg_color = Color(0.015, 0.02, 0.035, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1, 0.5, 0.7, 0.5)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_pregame"]
+font_size = 15
+font_color = Color(1, 0.85, 0.1, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 0.9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 22
+font_color = Color(0, 0.94, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.9)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.08, 0.12, 0.2, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.45, 0.65, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="TutorialModal" type="CanvasLayer"]
+process_mode = 3
+layer = 120
+script = ExtResource("1_modal")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.015, 0.025, 0.82)
+
+[node name="ModalPanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -325.0
+offset_right = 540.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="ModalPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="ModalPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TopBar" type="HBoxContainer" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TabControls" type="Button" parent="ModalPanel/Margin/VBox/TopBar"]
+custom_minimum_size = Vector2(155, 36)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "1. ĐIỀU KHIỂN"
+
+[node name="TabObjective" type="Button" parent="ModalPanel/Margin/VBox/TopBar"]
+custom_minimum_size = Vector2(155, 36)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "2. MỤC TIÊU"
+
+[node name="TabHazards" type="Button" parent="ModalPanel/Margin/VBox/TopBar"]
+custom_minimum_size = Vector2(155, 36)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "3. BẪY & QUÁI"
+
+[node name="TabPickups" type="Button" parent="ModalPanel/Margin/VBox/TopBar"]
+custom_minimum_size = Vector2(155, 36)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "4. NGỌC CYBER"
+
+[node name="TabShortcuts" type="Button" parent="ModalPanel/Margin/VBox/TopBar"]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "5. PHÍM TẮT & GOD"
+
+[node name="HeaderBox" type="VBoxContainer" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="PregameBanner" type="Label" parent="ModalPanel/Margin/VBox/HeaderBox"]
+layout_mode = 2
+text = "/// THÔNG BÁO XÂM NHẬP: SECTOR 1 - CYAN ABYSS ///"
+label_settings = SubResource("LabelSettings_pregame")
+horizontal_alignment = 1
+
+[node name="PageTitle" type="Label" parent="ModalPanel/Margin/VBox/HeaderBox"]
+layout_mode = 2
+text = "TRANG 1: ĐIỀU KHIỂN & LƯỚT DASH (CONTROLS)"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ContentBox" type="HBoxContainer" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="IllustrationBox" type="PanelContainer" parent="ModalPanel/Margin/VBox/ContentBox"]
+custom_minimum_size = Vector2(380, 370)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_canvas_box")
+
+[node name="IllustrationCanvas" type="Control" parent="ModalPanel/Margin/VBox/ContentBox/IllustrationBox"]
+layout_mode = 2
+
+[node name="TextBox" type="MarginContainer" parent="ModalPanel/Margin/VBox/ContentBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="DescLabel" type="RichTextLabel" parent="ModalPanel/Margin/VBox/ContentBox/TextBox"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Mô tả chi tiết hướng dẫn chơi..."
+fit_content = false
+scroll_active = true
+
+[node name="HSeparator2" type="HSeparator" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="ModalPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="BtnSkip" type="Button" parent="ModalPanel/Margin/VBox/BottomBar"]
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "BỎ QUA >> (SKIP)"
+
+[node name="SpacerLeft" type="Control" parent="ModalPanel/Margin/VBox/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnPrev" type="Button" parent="ModalPanel/Margin/VBox/BottomBar"]
+custom_minimum_size = Vector2(130, 42)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "< TRANG TRƯỚC"
+
+[node name="PageDotsLabel" type="Label" parent="ModalPanel/Margin/VBox/BottomBar"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "MỤC 1 / 5"
+horizontal_alignment = 1
+
+[node name="BtnNext" type="Button" parent="ModalPanel/Margin/VBox/BottomBar"]
+custom_minimum_size = Vector2(130, 42)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "TRANG TIẾP >"
+
+[node name="SpacerRight" type="Control" parent="ModalPanel/Margin/VBox/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnAction" type="Button" parent="ModalPanel/Margin/VBox/BottomBar"]
+custom_minimum_size = Vector2(210, 42)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "TRANG TIẾP >"

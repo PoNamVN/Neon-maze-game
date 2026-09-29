@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/collectibles/cyber_pickup.gd" id="1_pickup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 20.0
+
+[node name="CyberPickup" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_pickup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="VisualOuter" type="Polygon2D" parent="."]
+color = Color(1, 0.88, 0, 1)
+
+[node name="VisualInner" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 1)
+
+[node name="PulseRing" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(1, 0.88, 0, 1)
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 28
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.95
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 160.0
+scale_amount_min = 2.0
+scale_amount_max = 4.5
+color = Color(1, 0.88, 0, 1)

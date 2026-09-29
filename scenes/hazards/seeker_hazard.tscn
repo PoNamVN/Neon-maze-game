@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/hazards/seeker_hazard.gd" id="1_seeker"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="SeekerHazard" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_seeker")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="DetectionRing" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(1, 0.05, 0.25, 0.08)
+
+[node name="VisualOuter" type="Polygon2D" parent="."]
+color = Color(1, 0.05, 0.25, 1)
+
+[node name="VisualCore" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 1)
+
+[node name="AlertParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.8
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 140.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 0.05, 0.25, 1)
+
+[node name="DestroyParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 28
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.95
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 240.0
+scale_amount_min = 2.5
+scale_amount_max = 5.0
+color = Color(1, 0.05, 0.25, 1)

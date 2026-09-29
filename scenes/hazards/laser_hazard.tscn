@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/hazards/laser_hazard.gd" id="1_laser"]
+
+[node name="LaserHazard" type="Node2D"]
+script = ExtResource("1_laser")
+
+[node name="CoreCircle" type="Polygon2D" parent="."]
+color = Color(1, 0.176471, 0.584314, 1)
+
+[node name="Pivot" type="Node2D" parent="."]
